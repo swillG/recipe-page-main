@@ -1,0 +1,195 @@
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format("woff2");
+}
+
+@font-face {
+  font-family: "Young-Serif";
+  src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf) format("woff2");
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: hsl(30, 54%, 90%);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main container */
+.container {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  width: 45rem;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 2rem;
+}
+
+/* Image */
+.img-container {
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Typography */
+.lower p,
+ul,
+ol {
+  font-size: 16px;
+  color: hsl(30, 10%, 34%);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+h1 {
+  font-family: "Young-Serif", serif;
+  font-size: 2.5rem;
+  color: hsl(24, 5%, 18%);
+}
+
+h2,
+h3 {
+  font-family: "Young-Serif", serif;
+  color: hsl(14, 45%, 36%);
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: hsl(332, 51%, 32%);
+}
+
+/* Lists */
+li {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: hsl(30, 10%, 34%);
+  text-align: justify;
+}
+
+ol li {
+  margin-bottom: 1.2rem;
+  line-height: 1.75;
+}
+
+ol,
+ul {
+  list-style-position: outside;
+  padding-left: 2rem;
+}
+
+ul li::marker,
+ol li::marker {
+  color: hsl(14, 45%, 36%);
+}
+
+ol li::marker {
+  font-weight: bold;
+}
+
+/* Sections */
+.info-1,
+.info-2,
+.info-3,
+.info-4,
+.info-5 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-1 {
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+
+.info-2 {
+  background-color: hsl(330, 100%, 98%);
+  padding: 1rem 0 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.info-4 {
+  padding: 2rem 0 1.2rem;
+  border-top: 2px solid hsl(30, 18%, 87%);
+  border-bottom: 2px solid hsl(30, 18%, 87%);
+}
+
+.info-5 {
+  padding-top: 2rem;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+  font-size: 1rem;
+}
+
+table td:last-child {
+  color: hsl(14, 45%, 36%);
+}
+
+/* ✅ MEDIA QUERIES - Responsive Design */
+
+/* Phones ~ up to 375px */@media (max-width: 375px) {
+  body {
+    all: unset;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0rem;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .img-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+    background-image: url('assets/images/image-omelette.jpeg'); /* ✅ Background image applied ONLY here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .lower p,
+  ul,
+  ol,
+  li,
+  table td {
+    font-size: 14px;
+  }
+
+  .info-2 {
+    padding-left: 1rem;
+  }
+}
